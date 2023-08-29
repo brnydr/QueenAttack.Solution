@@ -30,5 +30,12 @@ namespace QueenAttack.Tests
       int file = 7;
       Assert.AreEqual(file, newQueen.FileCoord);
     }
+
+    [TestMethod]
+    public void PieceConstructor_CreateInstanceOfPiece_Piece()
+    {
+      Piece newPiece = new Piece();
+      Assert.AreEqual(typeof(Piece), newPiece.GetType());
+    }
   }
 }
