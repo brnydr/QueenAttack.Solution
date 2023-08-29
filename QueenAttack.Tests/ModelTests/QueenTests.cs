@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using QueenAttack.Models;
@@ -34,8 +35,15 @@ namespace QueenAttack.Tests
     [TestMethod]
     public void PieceConstructor_CreateInstanceOfPiece_Piece()
     {
-      Piece newPiece = new Piece();
+      Piece newPiece = new Piece(4);
       Assert.AreEqual(typeof(Piece), newPiece.GetType());
+    }
+
+    [TestMethod]
+    public void GetRankCoordinateForPiece_ReturnRankCoordinate_Int()
+    {
+      Piece newPiece = new Piece(4);
+      Assert.AreEqual(newPiece.RankCoord, 4);
     }
   }
 }
