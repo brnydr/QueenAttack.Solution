@@ -33,24 +33,10 @@ namespace QueenAttack.Tests
     }
 
     [TestMethod]
-    public void PieceConstructor_CreateInstanceOfPiece_Piece()
+    public void CanAttack_ReturnTrueIfQueenCanAttack_True()
     {
-      Piece newPiece = new Piece(4, 5);
-      Assert.AreEqual(typeof(Piece), newPiece.GetType());
-    }
-
-    [TestMethod]
-    public void GetRankCoordinateForPiece_ReturnRankCoordinate_Int()
-    {
-      Piece newPiece = new Piece(4, 5);
-      Assert.AreEqual(newPiece.RankCoord, 4);
-    }
-
-    [TestMethod]
-    public void GetFileCoordinateForPiece_ReturnFileCoordinate_Int()
-    {
-      Piece newPiece = new Piece(4, 5);
-      Assert.AreEqual(newPiece.FileCoord, 5);
+      Queen newQueen = new Queen(4, 7);
+      Assert.AreEqual(true, newQueen.CanAttack());
     }
   }
 }
