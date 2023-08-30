@@ -36,7 +36,8 @@ namespace QueenAttack.Tests
     public void CanAttack_ReturnTrueIfQueenCanAttack_True()
     {
       Queen newQueen = new Queen(4, 7);
-      Assert.AreEqual(true, newQueen.CanAttack());
+      Queen newPiece = new Queen(4, 5);
+      Assert.AreEqual(true, newQueen.CanAttack(newPiece));
     }
   }
 }
